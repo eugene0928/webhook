@@ -6,7 +6,7 @@ export class Bot {
   private _channels: (string | number)[] = [];
   private _instance: Grammy;
 
-  constructor(token: string = env["TOKEN"], channel: string = "") {
+  constructor(token: string = Deno.env["TOKEN"], channel: string = "") {
     if (!token) {
       throw new Error("No token provided");
     } else {
@@ -17,7 +17,7 @@ export class Bot {
       this._channels.push(channel);
     }
 
-    if (env["WEBHOOK"]) {
+    if (Deno.env["WEBHOOK"]) {
       this._channels.push(env["WEBHOOK"]!);
     }
   }
