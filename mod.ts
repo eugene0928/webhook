@@ -20,5 +20,3 @@ const config: Config = {
 
 // Start the server
 await webhooks(config)(...triggers);
-
-
